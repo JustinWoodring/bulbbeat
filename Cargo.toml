@@ -1,0 +1,26 @@
+[package]
+name = "bulbbeat"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.82"
+authors = ["Justin Woodring <jwoodrg@gmail.com>"]
+license = "MIT"
+repository = "https://github.com/JustinWoodring/bulbbeat"
+homepage = "https://github.com/JustinWoodring/bulbbeat"
+readme = "README.md"
+description = "Music-synced TP-Link Kasa bulb lighting: beat-reactive color from spectral analysis, with a web UI"
+keywords = ["kasa", "bulb", "music", "audio", "lighting"]
+categories = ["multimedia::audio", "command-line-utilities"]
+
+[dependencies]
+kasa-rs = { path = "../kasa-rs", version = "0.1" }
+clap = { version = "4", features = ["derive"] }
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "net", "time", "signal", "io-util", "sync"] }
+anyhow = "1"
+parking_lot = "0.12"
+serde_json = "1"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+cpal = "0.18"
+symphonia = { version = "0.6", features = ["mp3", "flac", "pcm", "wav", "ogg", "vorbis", "isomp4", "aac"] }
+rustfft = "6"
